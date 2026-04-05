@@ -48,6 +48,10 @@ jobs:
         with:
           name: wheels-linux-${{ matrix.platform.target }}
           path: dist
+      - name: Upload to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.whl
 
   musllinux:
     runs-on: ${{ matrix.platform.runner }}
@@ -79,6 +83,10 @@ jobs:
         with:
           name: wheels-musllinux-${{ matrix.platform.target }}
           path: dist
+      - name: Upload to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.whl
 
   windows:
     runs-on: ${{ matrix.platform.runner }}
@@ -111,6 +119,10 @@ jobs:
         with:
           name: wheels-windows-${{ matrix.platform.target }}
           path: dist
+      - name: Upload to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.whl
 
   macos:
     runs-on: ${{ matrix.platform.runner }}
@@ -137,6 +149,10 @@ jobs:
         with:
           name: wheels-macos-${{ matrix.platform.target }}
           path: dist
+      - name: Upload to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.whl
 
   sdist:
     runs-on: ubuntu-latest
@@ -152,6 +168,10 @@ jobs:
         with:
           name: wheels-sdist
           path: dist
+      - name: Upload to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.whl
 
   # release:
   #   name: Release
